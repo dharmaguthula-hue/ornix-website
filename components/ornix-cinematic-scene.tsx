@@ -191,7 +191,6 @@ export function OrnixCinematicScene() {
   const clockRef = useRef(new THREE.Clock());
   const splitLoadedRef = useRef(false);
   const [phase, setPhase] = useState(1);
-  const [scrollProgress, setScrollProgress] = useState(0);
 
   // Initialize Three.js scene with enhanced lighting and particles
   useEffect(() => {
@@ -469,7 +468,6 @@ export function OrnixCinematicScene() {
         pin: true,
         onUpdate: (self) => {
           const progress = self.progress;
-          setScrollProgress(progress);
 
           // Load split model at 30% progress
           if (progress >= 0.3 && !splitLoadedRef.current) {
